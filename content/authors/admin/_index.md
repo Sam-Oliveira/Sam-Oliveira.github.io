@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 吳健雄
+title: Samuel Oliveira
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Samuel
+last_name: Oliveira
 
 # Status emoji
 status:
@@ -17,34 +17,31 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Professor of Artificial Intelligence
+role: MSc Machine Learning Student 
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Stanford University
-    url: https://www.stanford.edu/
+  - name: University College London (UCL)
+    url: https://www.ucl.ac.uk/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: ''
 
 # Interests to show in About widget
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Reinforcement Learning
+  - Statistical ML
+  - Robust and Safe AI
 
 # Education to show in About widget
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: MSc in Machine Learning
+      institution: University College London
+      year: 2023 - 2024
+    - course: MEng in Computational Bioengineering
+      institution: Imperial College London
+      year: 2019 - 2023
 
 # Skills
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -93,32 +90,32 @@ skills:
 social:
   - icon: envelope
     icon_pack: fas
-    link: '/#contact'
+    link: 'mailto:samuel.oliveira.23@ucl.ac.uk'
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/GeorgeCushen
-    label: Follow me on Twitter
+    link: https://twitter.com/sam_ccoliveira
+    #label: Follow me on Twitter
     display:
       header: true
-  - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
-    icon_pack: fas
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  #- icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
+  #  icon_pack: fas
+  #  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
+    link: https://github.com/sam-oliveira
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/
+    link: https://www.linkedin.com/sam-oliveira
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
   # and uncomment the lines below.
   - icon: cv
     icon_pack: ai
-    link: uploads/resume.pdf
+    link: uploads/SamuelOliveiraCV.pdf
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I'm Samuel! I'm a Machine Learning Master's student at University College London. Previously, I graduated with First Class Honours from Imperial College London. I am interested in creating decision-making systems that can learn continually, adapting to new environments. In particular, I am curious about how to ensure that systems that can "learn forever" do so in a way that is safe and robust. 
 {style="text-align: justify;"}
