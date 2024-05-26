@@ -5,19 +5,6 @@
  width="1200.000000pt" height="1453.000000pt" viewBox="0 0 1200.000000 1453.000000"
  preserveAspectRatio="xMidYMid meet">
 
-<style>
-    :root { --color: #00FF00; }
-    @media (prefers-color-scheme: light) { :root { --color: #0000FF; } }
-    @media (prefers-color-scheme: dark) { :root { --color: #FF0000; } }
-    path {
-      fill: none;
-      stroke: var(--color);
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-  </style>
-
 <g transform="translate(0.000000,1453.000000) scale(0.100000,-0.100000)">
 <path d="M3774 12298 c-1763 -1765 -2247 -2255 -2349 -2378 -323 -388 -564
 -758 -780 -1195 -135 -272 -219 -475 -315 -765 -280 -841 -369 -1697 -270
@@ -36,3 +23,15 @@
 -338 523 -646 566 -88 12 -135 12 -221 0z"=/>
 </g>
 </svg>
+<style>
+    :root { --color: #00FF00; }
+    @media (prefers-color-scheme: light) { :root { --color: #0000FF; } }
+    @media (prefers-color-scheme: dark) { :root { --color: #FF0000; } }
+    path {
+      fill: none;
+      stroke: var(--color);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
