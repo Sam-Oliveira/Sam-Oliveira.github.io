@@ -23,15 +23,3 @@
 -338 523 -646 566 -88 12 -135 12 -221 0z"=/>
 </g>
 </svg>
-<style>
-    :root { --color: #00FF00; }
-    @media (prefers-color-scheme: light) { :root { --color: #0000FF; } }
-    @media (prefers-color-scheme: dark) { :root { --color: #FF0000; } }
-    path {
-      fill: none;
-      stroke: var(--color);
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-  </style>
