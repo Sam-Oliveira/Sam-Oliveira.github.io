@@ -48,12 +48,12 @@ education:
 skills:
   - name: Technical
     items:
-      - name: Python & PyTorch
+      - name: Python 
         description: ''
         percent: 100
         icon: python
         icon_pack: fab
-      - name: Data Science
+      - name: PyTorch
         description: ''
         percent: 100
         icon: chart-line
@@ -61,8 +61,8 @@ skills:
       - name: AWS
         description: ''
         percent: 40
-        icon: amazonwebservices
-        icon_pack: devicon
+        icon: aws
+        icon_pack: fab
   - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'
@@ -70,8 +70,7 @@ skills:
       - name: Tennis
         description: ''
         percent: 90
-        icon: tennis-ball
-        icon_pack: fas
+        icon: tennis
       - name: Running
         description: ''
         percent: 85
