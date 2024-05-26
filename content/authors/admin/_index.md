@@ -56,7 +56,8 @@ skills:
       - name: PyTorch
         description: ''
         percent: 100
-        icon: 
+        icon: pytorch
+        icon_pack: custom
       - name: AWS
         description: ''
         percent: 40
