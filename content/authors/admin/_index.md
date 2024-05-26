@@ -56,8 +56,8 @@ skills:
       - name: PyTorch
         description: ''
         percent: 100
-        icon: chart-line
-        icon_pack: fas
+        icon: pytorch
+        icon_pack: devicon
       - name: AWS
         description: ''
         percent: 40
