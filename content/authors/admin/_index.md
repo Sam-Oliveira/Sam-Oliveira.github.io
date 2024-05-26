@@ -71,12 +71,12 @@ skills:
         description: ''
         percent: 90
         icon: tennis-ball
-        icon_pack: fab
+        icon_pack: fas
       - name: Running
         description: ''
         percent: 85
         icon: person-running
-        icon_pack: fab
+        icon_pack: fas
       - name: Film Photography
         description: ''
         percent: 60
@@ -117,5 +117,5 @@ social:
 highlight_name: true
 ---
 
-I'm Samuel! I'm a Machine Learning Master's student at University College London. Previously, I graduated with First Class Honours from Imperial College London. I am interested in creating decision-making systems that can learn continually, adapting to new environments. In particular, I am curious about how to ensure that systems that can "learn forever" do so in a way that is safe and robust. 
+I'm Samuel! I'm a Machine Learning Master's student at University College London. Previously, I graduated with First Class Honours from Imperial College London. I am interested in creating decision-making systems that can learn continually, adapting to new environments. In particular, I am curious about how to ensure that systems that can "learn forever" do so in a way that is safe and robust. I am currently doing my MSc Thesis on using denoising diffusion models for inverse RL in Ilija Bogunovic's Group at UCL.
 {style="text-align: justify;"}
