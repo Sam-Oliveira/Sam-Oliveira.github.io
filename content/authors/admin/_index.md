@@ -57,6 +57,7 @@ skills:
         description: ''
         percent: 100
         icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" />
+        icon_pack:devicon
       - name: AWS
         description: ''
         percent: 40
@@ -69,7 +70,8 @@ skills:
       - name: Tennis
         description: ''
         percent: 90
-        icon: <i class="fa-solid fa-tennis-ball"></i>
+        icon: tennis
+        icon_pack: custom
       - name: Running
         description: ''
         percent: 85
