@@ -62,42 +62,29 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: MSc Thesis Student
-            company: University College London
-            company_url: ''
-            company_logo: ucl
-            location: London
-            date_start: '2023-06-26'
-            date_end: ''
-            description: |2-
-                Responsibilities include:
-
-                * Analysing
-                * Modelling
-                * Deploying
         - title: Research Assistant in Statistical ML
           company: Imperial College London
           company_url: ''
-          company_logo: imperial
+          company_logo: org-gc
           location: London
-          date_start: '2023-06-26'
-          date_end: '2023-09-15'
+          date_start: '2021-0-26'
+          date_end: ''
           description: |2-
               Responsibilities include:
 
               * Analysing
               * Modelling
               * Deploying
-        - title: Software Engineering Intern
-          company: Goldman Sachs
+        - title: Professor of Semiconductor Physics
+          company: University X
           company_url: ''
-          company_logo: gs
-          location: Birmingham, UK
-          date_start: '2022-06-20'
-          date_end: '2022-08-26'
+          company_logo: org-x
+          location: California
+          date_start: '2016-01-01'
+          date_end: '2020-12-31'
           description: Taught electronic engineering and researched semiconductor physics.
     design:
-      columns: '3'
+      columns: '2'
   - block: accomplishments
     content:
       # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
