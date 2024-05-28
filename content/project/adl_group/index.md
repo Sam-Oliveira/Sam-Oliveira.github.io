@@ -1,6 +1,5 @@
 ---
-title: Impact of the pre-training data distribution on
-the fine-tuned performance of Masked Autoencoders
+title: Impact of the pre-training data distribution on the fine-tuned performance of Masked Autoencoders
 summary: Group Project as part of the Applied Deep Learning (COMP0197) at UCL.
 tags:
   - Stat
