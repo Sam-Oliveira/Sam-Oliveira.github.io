@@ -65,7 +65,7 @@ sections:
         - title: Research Assistant in Statistical ML
           company: Imperial College London
           company_url: ''
-          company_logo: org-gc
+          company_logo: imperial
           location: London
           date_start: '2021-02-26'
           date_end: ''
