@@ -63,13 +63,13 @@ sections:
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
         - title: MSc Thesis Student
-            company: UCL
-            company_url: ''
-            company_logo: ucl
-            location: london
-            date_start: '2016-01-01'
-            date_end: ''
-            description: Taught electronic engineering and researched semiconductor physics.
+          company: UCL
+          company_url: ''
+          company_logo: ucl
+          location: london
+          date_start: '2016-01-01'
+          date_end: ''
+          description: Taught electronic engineering and researched semiconductor physics.
         - title: Research Assistant in Statistical ML
           company: Imperial College London
           company_url: ''
