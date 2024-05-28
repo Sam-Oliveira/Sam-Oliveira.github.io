@@ -88,8 +88,8 @@ sections:
           company_url: ''
           company_logo: gs
           location: Birmingham, UK
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
+          date_start: '2022-06-20'
+          date_end: '2022-08-26'
           description: |2-
             Worked for 10 weeks as a Software Engineer in the Technology division of Goldman Sachs.
             - Built from scratch a pen testing framework for a new web app hosted on AWS.
