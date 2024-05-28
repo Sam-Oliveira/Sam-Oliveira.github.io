@@ -60,7 +60,7 @@ skills:
         icon_pack: custom
       - name: AWS
         description: ''
-        percent: 40
+        percent: 50
         icon: aws
         icon_pack: fab
   - name: Hobbies

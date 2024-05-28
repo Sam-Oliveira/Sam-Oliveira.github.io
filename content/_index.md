@@ -187,10 +187,14 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
+        - name: Statistical ML
+          tag: Stat
+        - name: RL
+          tag: RL
+        - name: Computer Vision
+          tag: CV
         - name: Other
-          tag: Demo
+          tag: other_project
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
