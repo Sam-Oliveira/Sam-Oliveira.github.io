@@ -68,7 +68,7 @@ sections:
             company_logo: ucl
             location: London
             date_start: '2023-06-26'
-            date_end: '2023-09-15'
+            date_end: ''
             description: |2-
                 Responsibilities include:
 
@@ -97,7 +97,7 @@ sections:
           date_end: '2022-08-26'
           description: Taught electronic engineering and researched semiconductor physics.
     design:
-      columns: '2'
+      columns: '3'
   - block: accomplishments
     content:
       # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
