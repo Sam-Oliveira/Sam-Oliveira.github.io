@@ -66,28 +66,28 @@ sections:
           company: UCL
           company_url: ''
           company_logo: ucl
-          location: london
-          date_start: '2016-01-01'
+          location: London, UK
+          date_start: '2024-03-15'
           date_end: ''
-          description: Taught electronic engineering and researched semiconductor physics.
+          description: Investigating the use of diffusion models (Diffuser) for Inverse Reinforcement Learning, in Ilija Bogunovic's Group. 
         - title: Research Assistant in Statistical ML
           company: Imperial College London
           company_url: ''
           company_logo: imperial
-          location: London
-          date_start: '2021-02-26'
-          date_end: ''
+          location: London, UK
+          date_start: '2022-10-10'
+          date_end: '2023-09-15'
           description: |2-
-              Responsibilities include:
-
-              * Analysing
-              * Modelling
-              * Deploying
+          Undergraduate Thesis on creating a computationally efficient algorithm to predict eczema severity. Worked on it as part of my Thesis (October 2023 - June 2023) as well as an intern Research Assistant (June 2023 - September 2023). Work done as part of the [Tanaka Group](https://www.rtanakagroup.com/), and in collaboration with [Dr Rob Moss](https://robmoss.github.io/) of the University of Melbourne.
+              * Implemented a framework using Sequential Monte Carlo methods to predict symptom severity in eczema patients.
+              * The framework is capable of outputting predictions for each patient in under a second.
+              * Taught a 2-hour tutorial on SMC methods for the entire lab group.
+              * Currently writing it as a paper “EczemaPF: a computationally efficient algorithm for predicting the evolution of eczema severity” (to be published in Q3 2024).    
         - title: Software Engineering Intern
           company: Goldman Sachs
           company_url: ''
           company_logo: gs
-          location: Birmingham
+          location: Birmingham, UK
           date_start: '2016-01-01'
           date_end: '2020-12-31'
           description: Taught electronic engineering and researched semiconductor physics.
