@@ -62,6 +62,14 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: MSc Thesis Student
+            company: UCL
+            company_url: ''
+            company_logo: ucl
+            location: london
+            date_start: '2016-01-01'
+            date_end: ''
+            description: Taught electronic engineering and researched semiconductor physics.
         - title: Research Assistant in Statistical ML
           company: Imperial College London
           company_url: ''
@@ -75,11 +83,11 @@ sections:
               * Analysing
               * Modelling
               * Deploying
-        - title: Professor of Semiconductor Physics
-          company: University X
+        - title: Software Engineering Intern
+          company: Goldman Sachs
           company_url: ''
-          company_logo: org-x
-          location: California
+          company_logo: gs
+          location: Birmingham
           date_start: '2016-01-01'
           date_end: '2020-12-31'
           description: Taught electronic engineering and researched semiconductor physics.
