@@ -67,7 +67,7 @@ sections:
           company_url: ''
           company_logo: org-gc
           location: London
-          date_start: '2021-0-26'
+          date_start: '2021-02-26'
           date_end: ''
           description: |2-
               Responsibilities include:
