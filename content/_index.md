@@ -79,7 +79,6 @@ sections:
           date_end: '2023-09-15'
           description: |2-
           Undergraduate Thesis on creating a computationally efficient algorithm to predict eczema severity. Worked on it as part of my Thesis (October 2023 - June 2023) as well as an intern Research Assistant (June 2023 - September 2023). Work done as part of the [Tanaka Group](https://www.rtanakagroup.com/), and in collaboration with [Dr Rob Moss](https://robmoss.github.io/) of the University of Melbourne:
-
           - Implemented a framework using Sequential Monte Carlo methods to predict symptom severity in eczema patients.
           - The framework is capable of outputting predictions for each patient in under a second.
           - Taught a 2-hour tutorial on SMC methods for the entire lab group.
