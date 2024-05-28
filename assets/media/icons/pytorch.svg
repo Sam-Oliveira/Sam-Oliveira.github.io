@@ -3,7 +3,7 @@
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="1200.000000pt" height="1453.000000pt" viewBox="0 0 1200.000000 1453.000000"
- preserveAspectRatio="xMidYMid meet">
+ preserveAspectRatio="xMidYMid meet" fill="currentColor">
 <g transform="translate(0.000000,1453.000000) scale(0.100000,-0.100000)">
 <path d="M3774 12298 c-1763 -1765 -2247 -2255 -2349 -2378 -323 -388 -564
 -758 -780 -1195 -135 -272 -219 -475 -315 -765 -280 -841 -369 -1697 -270
