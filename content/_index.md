@@ -78,7 +78,7 @@ sections:
           date_start: '2022-10-10'
           date_end: '2023-09-15'
           description: |2-
-            Undergraduate Thesis on creating a computationally efficient algorithm to predict eczema severity. Worked on it as part of my Thesis (October 2023 - June 2023) as well as an intern Research Assistant (June 2023 - September 2023). Work done as part of the [Tanaka Group](https://www.rtanakagroup.com/), and in collaboration with [Dr Rob Moss](https://robmoss.github.io/) of the University of Melbourne:
+            Undergraduate Thesis on creating a computationally efficient algorithm to predict eczema severity. Worked on it as part of my Thesis (October 2023 - June 2023) as well as an intern Research Assistant (June 2023 - September 2023). Work done as part of the [Tanaka Group](https://www.rtanakagroup.com/), and in collaboration with [Dr Rob Moss](https://robmoss.github.io/) of the University of Melbourne.
             - Implemented a framework using Sequential Monte Carlo methods to predict symptom severity in eczema patients.
             - The framework is capable of outputting predictions for each patient in under a second.
             - Taught a 2-hour tutorial on SMC methods for the entire lab group.
@@ -90,7 +90,12 @@ sections:
           location: Birmingham, UK
           date_start: '2016-01-01'
           date_end: '2020-12-31'
-          description: Taught electronic engineering and researched semiconductor physics.
+          description: |2-
+            - Built from scratch a pen testing framework for a new web app hosted on AWS.
+            - Presented my work to 100+ colleagues.
+            - Received a returning offer
+            - Tech Stack: Python, AWS, Terraform.
+          
     design:
       columns: '2'
   - block: accomplishments
