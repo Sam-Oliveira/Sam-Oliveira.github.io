@@ -1,6 +1,6 @@
 ---
 title: Impact of the pre-training data distribution on the fine-tuned performance of Masked Autoencoders
-summary: Group Project as part of the Applied Deep Learning (COMP0197) at UCL.
+summary: Group Project as part of the Applied Deep Learning (COMP0197) module at UCL.
 tags:
   - Stat
 date: '2023-04-27T00:00:00Z'
@@ -32,6 +32,7 @@ both in NLP and Computer Vision. These methods allow for pretraining on very lar
 impractical), resulting in models which are capable of learning richer embedded
 representations. These models can then be fine-tuned to specific tasks using
 significantly less data than if trained from scratch.
+
 In computer vision, these methods are mostly divided in invariance-based
 methods and generative methods. The former are based on training an encoder-like network to produce similar embeddings for images of the
 same scene, but with different views. This is the idea behind contrastive learning. The embeddings will thus provide a representation with high semantic
@@ -42,6 +43,7 @@ representations, albeit of a lower level than contrastive methods. Recent work
 has proposed a third approach, named IJEPA, which also does not rely on
 data augmentation, but differs from MAEs by computing the loss in embedding
 space, thus promoting meaningful embedded representations.
+
 A natural question that arises from the pre-training of large models is how
 the distribution of the pre-training data affects the model’s performance on
 downstream tasks. In this paper, we hypothesise that pre-training on data
