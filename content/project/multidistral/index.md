@@ -1,6 +1,6 @@
 ---
-title: MultiDistral:\ Multi-Task MARL using shared distilled policies
-summary: Adapting DeepMind's Distral to a Multi-Agent setting, as part of the Multi-Agent AI (COMP0124) module at UCL.
+title: Multi-Task Multi-Agent RL using shared distilled policies
+summary: Adapting DeepMind's [Distral](https://arxiv.org/abs/1707.04175) to a Multi-Agent setting, as part of the Multi-Agent AI (COMP0124) module at UCL.
 tags:
   - RL
 date: '2024-04-11'
@@ -9,7 +9,7 @@ date: '2024-04-11'
 external_link: ''
 
 image:
-  caption: Example MAE output.
+  caption: Graphical description of the Distral framework.
   focal_point: Smart
 
 links:
