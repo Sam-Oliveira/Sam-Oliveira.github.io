@@ -3,7 +3,7 @@ title: Impact of the pre-training data distribution on the fine-tuned performanc
 summary: Group Project as part of the Applied Deep Learning (COMP0197) module at UCL.
 tags:
   - Computer Vision
-date: '2024-04-15 T00:00:00Z'
+date: '2024-04-15'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
