@@ -9,11 +9,11 @@ date: '2024-04-15 T00:00:00Z'
 external_link: ''
 
 image:
-  caption: Photo by rawpixel on Unsplash
+  caption: Example MAE output.
   focal_point: Smart
 
 links:
-url_code: ''
+url_code: 'https://github.com/Sam-Oliveira/pretraining_mae'
 url_pdf: uploads/adl.pdf
 url_slides: ''
 url_video: ''
