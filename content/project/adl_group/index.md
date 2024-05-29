@@ -2,8 +2,8 @@
 title: Impact of the pre-training data distribution on the fine-tuned performance of Masked Autoencoders
 summary: Group Project as part of the Applied Deep Learning (COMP0197) module at UCL.
 tags:
-  - Stat
-date: '2023-04-27T00:00:00Z'
+  - Computer Vision
+date: '2024-04-15 T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
@@ -14,7 +14,7 @@ image:
 
 links:
 url_code: ''
-url_pdf: ''
+url_pdf: 'https://drive.google.com/file/d/1xEna-rL-4xCyeZKJZ5UoOvzY6QIUK-oB/view?usp=sharing'
 url_slides: ''
 url_video: ''
 

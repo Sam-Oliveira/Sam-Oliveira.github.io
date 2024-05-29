@@ -188,13 +188,13 @@ sections:
         - name: All
           tag: '*'
         - name: Statistical ML
-          tag: Stat
+          tag: Statistical ML
         - name: RL
           tag: RL
         - name: Computer Vision
-          tag: CV
+          tag: Computer Vision
         - name: Other
-          tag: other_project
+          tag: Other
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
