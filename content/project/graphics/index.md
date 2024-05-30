@@ -26,7 +26,7 @@ url_video: ''
 slides: ''
 ---
 
-This coursework was the final piece of work for the [Computer Graphics](https://wp.doc.ic.ac.uk/bkainz/teaching/60005-co317-computer-graphics/) module at Imperial College. 
+This coursework was the final piece of work for the [Computer Graphics](https://wp.doc.ic.ac.uk/bkainz/teaching/60005-co317-computer-graphics/) module at Imperial College. I received a 100% mark, and an honorable mention for Task 2. 
 
 For Task 1, I had to implement a simple GPU-based Ray Tracing scene, according to a pre-specified scene. 
 
