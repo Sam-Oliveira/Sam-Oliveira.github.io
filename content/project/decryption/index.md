@@ -10,7 +10,7 @@ external_link: ''
 
 
 links:
-url_code: 'https://github.com/Sam-Oliveira/gatsby_coursework'
+url_code: ''
 url_slides: ''
 url_video: ''
 
@@ -26,16 +26,17 @@ As part of the MSc in Machine Learning programme at UCL, I had the opportunity t
 
 **1st Module: Probabilistic and Unsupervised Learning**
 
+Topics: Text decryption with MCMC, EM algorithm, Gibbs Sampling for LDA, Model Selection, Optimisation.
+
 [Question Paper](https://drive.google.com/file/d/1dgVLjtE_3-_wsRo0h3i4_2yMZuMWkCmD/view?usp=sharing)
 
 [My coursework](https://drive.google.com/file/d/1bIlHcsZ58J_u_cgImLloUsHEABlFfeJs/view?usp=sharing)
 
-Topics: Text decryption with MCMC, EM algorithm, Gibbs Sampling for LDA, Model Selection, Optimisation.
 
 **2nd Module: Approximate Inference and Learning in Probabilistic Models**
+
+Topics: Graphical Models, Gaussian Processes, Variational Inference, Expectation Propagation, Belief Propagation.
 
 [Question Paper](https://drive.google.com/file/d/1Vn6mFOAoh3lQry3aSKEym3OgKawDi6E4/view?usp=sharing)
 
 [My coursework](https://drive.google.com/file/d/1jpn9-KD50_1k0qbbm5GDUrZVaSL3pMuO/view?usp=sharing)
-
-Topics: Graphical Models, Gaussian Processes, Variational Inference, Expectation Propagation, Belief Propagation.
