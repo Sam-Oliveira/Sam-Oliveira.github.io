@@ -204,7 +204,7 @@ sections:
   - block: markdown
     content:
       title: Gallery
-      subtitle: ''
+      subtitle: 'Some of the photos I have taken with my film camera.'
       text: |-
         {{< gallery album="demo" >}}
     design:
