@@ -2,7 +2,7 @@
 title: GPU Ray Tracing
 summary: Ray Tracing task as part of the Computer Graphics module at Imperial College London. Received an honorable mention for "scene composition" for Part 2.
 tags:
-  - Computer Vision
+  - Other
 date: '2022-03-15'
 
 # Optional external URL for project (replaces project detail page).
