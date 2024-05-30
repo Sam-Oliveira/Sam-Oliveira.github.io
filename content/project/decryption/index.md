@@ -24,18 +24,18 @@ slides: ''
 
 As part of the MSc in Machine Learning programme at UCL, I had the opportunity to take two modules at the Gatsby Unit aimed at their PhD students. Each of the modules had a substantial piece of coursework, which are linked below:
 
-1st Module: Probabilistic and Unsupervised Learning.
+**1st Module: Probabilistic and Unsupervised Learning**
 
-[Question Paper](uploads/adl.pdf)
+[Question Paper](https://drive.google.com/file/d/1dgVLjtE_3-_wsRo0h3i4_2yMZuMWkCmD/view?usp=sharing)
 
-[My coursework](uploads/adl.pdf)
+[My coursework](https://drive.google.com/file/d/1bIlHcsZ58J_u_cgImLloUsHEABlFfeJs/view?usp=sharing)
 
 Topics: Text decryption with MCMC, EM algorithm, Gibbs Sampling for LDA, Model Selection, Optimisation.
 
-2nd Module: Approximate Inference and Learning in Probabilistic Models
+**2nd Module: Approximate Inference and Learning in Probabilistic Models**
 
-[Question Paper](uploads/adl.pdf)
+[Question Paper](https://drive.google.com/file/d/1Vn6mFOAoh3lQry3aSKEym3OgKawDi6E4/view?usp=sharing)
 
-[My coursework](uploads/adl.pdf)
+[My coursework](https://drive.google.com/file/d/1jpn9-KD50_1k0qbbm5GDUrZVaSL3pMuO/view?usp=sharing)
 
 Topics: Graphical Models, Gaussian Processes, Variational Inference, Expectation Propagation, Belief Propagation.
