@@ -31,8 +31,8 @@ This coursework was the final piece of work for the [Computer Graphics](https://
 For Task 1, I had to implement a simple GPU-based Ray Tracing scene, according to a pre-specified scene. 
 
 
-![alt text](featured.png "Title")
+![alt text](featured.png "Task 1")
 
 For Task 2, we were asked to implement our own scene, and add any technical extensions to it. Due to my passion for space, I decided to create a solar system-like scene (obviously ignoring the proper orbits of the planets). Compared to Task 1, I added to the ray tracing task: soft shadows, fog (dark blue) and spherical texture mapping (to make each sphere look like the sun or the respective planet).
 
-![alt text](featured.png "Title")
+![alt text](solar_system.png "Task 2")
