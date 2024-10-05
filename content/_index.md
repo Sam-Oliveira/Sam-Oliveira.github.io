@@ -62,10 +62,11 @@ sections:
           location: London, UK
           date_start: '2024-03-15'
           date_end: '2024-10-01'
-          description: Investigated the use of diffusion models for Inverse Reinforcement Learning, in [Ilija Bogunovic's Group](https://ilijabogunovic.com/).
-          - Created a model to learn a reward function from a classifier-guided [trajectory-level diffusion model](https://arxiv.org/abs/2205.09991). 
-          - Tested our method's performance on Gymnasium environments (PointMaze and HalfCheetah).
-          - [Thesis](https://drive.google.com/file/d/1fPKvR1gQBin58dITgiBOXqsKdk6Zevg1/view?usp=drive_link). [Code](https://github.com/Sam-Oliveira/diffuser_irl) 
+          description: |2-
+            Investigated the use of diffusion models for Inverse Reinforcement Learning, in [Ilija Bogunovic's Group](https://ilijabogunovic.com/).
+            - Created a model to learn a reward function from a classifier-guided [trajectory-level diffusion model](https://arxiv.org/abs/2205.09991). 
+            - Tested our method's performance on Gymnasium environments (PointMaze and HalfCheetah).
+            - [Thesis](https://drive.google.com/file/d/1fPKvR1gQBin58dITgiBOXqsKdk6Zevg1/view?usp=drive_link). [Code](https://github.com/Sam-Oliveira/diffuser_irl) 
         - title: Research Assistant in Statistical ML
           company: Imperial College London
           company_url: ''
