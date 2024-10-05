@@ -13,8 +13,8 @@ image:
   focal_point: Smart
 
 links:
-url_code: 
-url_pdf: uploads/adl.pdf
+url_code: https://github.com/Sam-Oliveira/diffuser_irl
+url_pdf: uploads/thesis.pdf
 url_slides: ''
 url_video: ''
 
@@ -26,29 +26,28 @@ url_video: ''
 slides: ''
 ---
 
-Self-supervised learning approaches have gained significant popularity in recent
-years, specifically when used for the pre-training of very large foundation models,
-both in NLP and Computer Vision. These methods allow for pretraining on very large amounts of data (for which collection of labels would be
-impractical), resulting in models which are capable of learning richer embedded
-representations. These models can then be fine-tuned to specific tasks using
-significantly less data than if trained from scratch.
-
-In computer vision, these methods are mostly divided in invariance-based
-methods and generative methods. The former are based on training an encoder-like network to produce similar embeddings for images of the
-same scene, but with different views. This is the idea behind contrastive learning. The embeddings will thus provide a representation with high semantic
-value. Generative methods (in which masked autoencoders (MAES) are
-included) are based on corrupting portions of the input images, and learning
-to predict these corrupted portions. In doing so, the model learns meaningful
-representations, albeit of a lower level than contrastive methods. Recent work
-has proposed a third approach, named IJEPA, which also does not rely on
-data augmentation, but differs from MAEs by computing the loss in embedding
-space, thus promoting meaningful embedded representations.
-
-A natural question that arises from the pre-training of large models is how
-the distribution of the pre-training data affects the model’s performance on
-downstream tasks. In this paper, we hypothesise that pre-training on data
-from a similar distribution to the fine-tuning data should result in better model
-performance. We implement a Masked Autoencoder, and pre-train it on the
-MS COCO dataset. This pre-trained model is then fine-tuned to perform
-image segmentation on the Oxford Pet dataset. Different splits of the MS
-COCO pre-training dataset are attempted so as to study the impact of the pretraining data distribution on the down-stream segmentation results.
+Reinforcement Learning has been applied to great success to tasks where a reward
+signal reward is clearly defined or can be hand-crafted. However, its application to tasks
+such as alignment to ethical standards has been limited by the inability to craft a reward
+function that can balance multiple (and often subjective) preferences. A possible solution
+is Inverse Reinforcement Learning (IRL), a class of problems in which one learns a reward
+function from observed agent behaviour.  
+In this work we propose a method for learning a
+reward function using diffusion models. Recent work has proposed using diffusion models
+to learn high-reward policies in sequential decision-making tasks. The general method
+involves training a diffusion model on a dataset of trajectories in order to learn a model
+of the environment dynamics, and then using the classifier guidance property of diffusion
+models to steer their output towards high-return policies. In this work we hypothesise that
+for a choice of trajectory similarity metric, and given a diffusion model trained on arbitrary
+trajectories in an environment, and example trajectories of a behaviour we wish to imitate,
+one can learn a proxy reward function of the desired behaviour (IRL). This learnt reward
+function can be used to steer the diffusion process towards the behaviour distribution,
+making our method learn a reward function while also imitating behaviour.  
+We study
+the performance of our method across three different environments, evaluating both the
+quality of the reward function learnt, as well as the quality of the output behaviour.
+We show our method learns a reward function that induces optimal behaviour in simple
+environments, outperforming state of the art IRL methods. We extend this method to
+more complex environments, showing that its performance lags behind in such settings.
+Finally, we present reasons for the failure modes of our method, and propose possible
+fixes.
