@@ -186,7 +186,7 @@ sections:
           tag: '*'
         - name: Statistical ML
           tag: Statistical ML
-        - name: RL
+        - name: Reinforcement Learning
           tag: RL
         - name: Computer Vision
           tag: Computer Vision

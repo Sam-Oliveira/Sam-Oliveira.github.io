@@ -31,7 +31,8 @@ signal reward is clearly defined or can be hand-crafted. However, its applicatio
 such as alignment to ethical standards has been limited by the inability to craft a reward
 function that can balance multiple (and often subjective) preferences. A possible solution
 is Inverse Reinforcement Learning (IRL), a class of problems in which one learns a reward
-function from observed agent behaviour.  
+function from observed agent behaviour.
+
 In this work we propose a method for learning a
 reward function using diffusion models. Recent work has proposed using diffusion models
 to learn high-reward policies in sequential decision-making tasks. The general method
@@ -42,7 +43,8 @@ for a choice of trajectory similarity metric, and given a diffusion model traine
 trajectories in an environment, and example trajectories of a behaviour we wish to imitate,
 one can learn a proxy reward function of the desired behaviour (IRL). This learnt reward
 function can be used to steer the diffusion process towards the behaviour distribution,
-making our method learn a reward function while also imitating behaviour.  
+making our method learn a reward function while also imitating behaviour.
+
 We study
 the performance of our method across three different environments, evaluating both the
 quality of the reward function learnt, as well as the quality of the output behaviour.
