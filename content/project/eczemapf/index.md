@@ -13,8 +13,8 @@ image:
   focal_point: Smart
 
 links:
-url_code: 
-url_pdf: 
+url_code: ''
+url_pdf: ''
 url_slides: ''
 url_video: ''
 
