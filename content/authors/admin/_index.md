@@ -45,6 +45,7 @@ education:
 
 # Skills
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
+
 skills:
   - name: Technical
     items:
@@ -67,11 +68,16 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Tennis
+      #- name: Tennis
+      #  description: ''
+      #  percent: 90
+      #  icon: tennis
+      #  icon_pack: custom
+      - name: Swimming
         description: ''
-        percent: 90
-        icon: tennis
-        icon_pack: custom
+        percent: 95
+        icon: person-swimming
+        icon_pack: fas      
       - name: Running
         description: ''
         percent: 85
@@ -117,5 +123,6 @@ social:
 highlight_name: true
 ---
 
-I'm Samuel! I'm a Machine Learning Master's student at University College London. Previously, I graduated with First Class Honours from Imperial College London. I am interested in creating decision-making systems that can learn continually, adapting to new environments. In particular, I am curious about how to ensure that systems that can "learn forever" do so in a way that is safe and robust. I am interested in appplications in astronomy and sustainability. I am currently doing my MSc Thesis on using denoising diffusion models for inverse RL in Ilija Bogunovic's Group at UCL.
+I'm Samuel! I just graduated with a MSc in Machine Learning at University College London (UCL). Previously, I graduated with First Class Honours from Imperial College London. I am interested in creating decision-making systems that can learn continually and open-endedly. In particular, I am curious about how to ensure that systems that can "learn forever" do so in a way that is safe and robust. I did my MSc Thesis on using denoising diffusion models for inverse RL in Ilija Bogunovic's Group at UCL. 
+In my free time I enjoy swimming and running, as well as taking pictures with my analogue cameras.
 {style="text-align: justify;"}
