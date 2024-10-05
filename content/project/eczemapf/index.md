@@ -1,5 +1,5 @@
 ---
-title: EczemaPF":" An online learning approach to real-time eczema severity prediction.
+title: EczemaPF \: An online learning approach to real-time eczema severity prediction.
 summary: Undergraduate Thesis at the [Tanaka Group](https://www.rtanakagroup.com/) (Imperial College London).
 tags:
   - Statistical ML
