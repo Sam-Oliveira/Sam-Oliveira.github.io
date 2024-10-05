@@ -65,7 +65,7 @@ sections:
           description: |2-
             Investigated the use of diffusion models for Inverse Reinforcement Learning, in [Ilija Bogunovic's Group](https://ilijabogunovic.com/).
             - Created a model to learn a reward/guide function from a classifier-guided [trajectory-level diffusion model](https://arxiv.org/abs/2205.09991). 
-            - Tested our method's performance on Gymnasium environments.
+            - Tested the method's performance on Gymnasium environments.
             - Thesis available [here](https://drive.google.com/file/d/1fPKvR1gQBin58dITgiBOXqsKdk6Zevg1/view?usp=drive_link). Code available [here](https://github.com/Sam-Oliveira/diffuser_irl).
         - title: Research Assistant in Statistical ML
           company: Imperial College London
