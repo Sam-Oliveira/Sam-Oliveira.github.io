@@ -30,8 +30,8 @@ bio: ''
 # Interests to show in About widget
 interests:
   - Reinforcement Learning
+  - Continual Learning and Open-Endedness
   - Statistical ML
-  - Robust and Safe AI
 
 # Education to show in About widget
 education:
@@ -123,6 +123,6 @@ social:
 highlight_name: true
 ---
 
-Hi! I'm Samuel. I just graduated with a MSc in Machine Learning at University College London (UCL). Previously, I graduated with First Class Honours from Imperial College London. I am interested in creating decision-making systems that can learn continually and open-endedly. In particular, I am curious about how to ensure that systems that can "learn forever" do so in a way that is safe and robust. I did my MSc Thesis on using diffusion models for inverse Reinforcement Learning in Ilija Bogunovic's Group at UCL.  
+Hi! I'm Samuel. I just graduated with a MSc in Machine Learning at University College London (UCL). Previously, I graduated with First Class Honours from Imperial College London. I am interested in creating decision-making systems that can learn continually and open-endedly. In particular, I am curious about studying these under a RL framework, as well as through improvements in current neural network architectures. I did my MSc Thesis on using diffusion models for inverse Reinforcement Learning in Ilija Bogunovic's Group at UCL.  
 In my free time I enjoy swimming and running, as well as taking pictures with my analogue cameras.
 {style="text-align: justify;"}
