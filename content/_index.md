@@ -65,7 +65,7 @@ sections:
           description: |2-
             Investigated the use of diffusion models for Inverse Reinforcement Learning, in [Ilija Bogunovic's Group](https://ilijabogunovic.com/).
             - Created a model to learn a reward/guide function from a classifier-guided [trajectory-level diffusion model](https://arxiv.org/abs/2205.09991). 
-            - Tested the method's performance on Gymnasium environments.
+            - Benchmarking the framework against state of the art IRL methods in multiple Gymnasium environments.
             - Thesis available [here](https://drive.google.com/file/d/1fPKvR1gQBin58dITgiBOXqsKdk6Zevg1/view?usp=drive_link). Code available [here](https://github.com/Sam-Oliveira/diffuser_irl).
         - title: Research Assistant in Statistical ML
           company: Imperial College London
@@ -79,7 +79,7 @@ sections:
             - Implemented a framework using Sequential Monte Carlo methods to predict symptom severity in eczema patients.
             - The framework is capable of outputting predictions for each patient in under a second.
             - Taught a 2-hour tutorial on SMC methods for the entire lab group.
-            - Currently writing it as a paper “EczemaPF: a computationally efficient algorithm for predicting the evolution of eczema severity” (to be published in Q3 2024).    
+            - Currently writing it as a paper “EczemaPF: a computationally efficient algorithm for predicting the evolution of eczema severity” (to be published in Q1 2025).    
         - title: Software Engineering Intern
           company: Goldman Sachs
           company_url: ''
