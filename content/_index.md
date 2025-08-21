@@ -60,7 +60,8 @@ sections:
           company_url: ''
           company_logo: ucl
           location: London, UK
-          date_start: '2024-03-15'
+          date_start: '2024-05-15'
+          date_end: '2025-05-15'
           description: |2-
             Investigated the use of diffusion models for Inverse Reinforcement Learning, in [Ilija Bogunovic's Group](https://ilijabogunovic.com/).
             - Created a model to learn a reward/guide function from a classifier-guided [trajectory-level diffusion model](https://arxiv.org/abs/2205.09991). 
@@ -199,14 +200,14 @@ sections:
       flip_alt_rows: false
 
   # Changed this from in between biography and experience, to here
-  - block: skills
-    content:
-      title: Skills
-      text: ''
+  #- block: skills
+  #  content:
+  #    title: Skills
+  #    text: ''
       # Choose a user to display skills from (a folder name within `content/authors/`)
-      username: admin
-    design:
-      columns: '1'
+  #    username: admin
+  #  design:
+  #    columns: '1'
   - block: markdown
     content:
       title: Gallery

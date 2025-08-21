@@ -17,12 +17,14 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: MSc Machine Learning Student 
+role: Ph.D. Student in Reinforcement Learning
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: University College London (UCL)
-    url: https://www.ucl.ac.uk/
+  - name: University of Alberta
+    url: https://www.ualberta.ca/en/index.html
+  - name: Amii
+    url: https://www.amii.ca/
 
 # Short bio (displayed in user profile at end of posts)
 bio: ''
@@ -31,11 +33,14 @@ bio: ''
 interests:
   - Reinforcement Learning
   - Continual Learning
-  - Statistical ML
+  - Robot Learning
 
 # Education to show in About widget
 education:
   courses:
+    - course: Ph.D. in Computer Science
+      institution: University of Alberta
+      year: 2025-2030
     - course: MSc in Machine Learning
       institution: University College London
       year: 2023 - 2024
@@ -96,7 +101,7 @@ skills:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:samuel.oliveira.23@ucl.ac.uk'
+    link: 'mailto:sdolivei@ualberta.ca'
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/sam_ccoliveira
@@ -123,5 +128,5 @@ social:
 highlight_name: true
 ---
 
-Hi! I'm Samuel. I graduated with a MSc in Machine Learning at University College London (UCL). Previously, I graduated with First Class Honours from Imperial College London. I am interested in creating decision-making systems that can learn continually. In particular, I am curious about studying these under a RL framework, as well as through improvements in current neural network architectures. I did my MSc Thesis on using diffusion models for Inverse Reinforcement Learning in Ilija Bogunovic's Group at UCL.
+Hi! I'm Samuel. I am a Ph.D. student at the [RLAI Lab](https://rlai.ualberta.ca/), supervised by [Rupam Mahmood](https://armahmood.github.io/) and affiliated with [Amii](https://www.amii.ca/). Previously, I graduated with a MSc in Machine Learning at University College London (UCL), and completed my undergraduate degree at Imperial College London. I am interested in creating decision-making systems that can learn continually. In particular, I am curious about studying these under a RL framework, as well as through improvements in current neural network architectures.
 {style="text-align: justify;"}
