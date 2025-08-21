@@ -69,30 +69,30 @@ education:
 #        percent: 50
 #        icon: aws
 #        icon_pack: fab
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
+#  - name: Hobbies
+#    color: '#eeac02'
+#    color_border: '#f0bf23'
+#    items:
       #- name: Tennis
       #  description: ''
       #  percent: 90
       #  icon: tennis
       #  icon_pack: custom
-      - name: Swimming
-        description: ''
-        percent: 95
-        icon: person-swimming
-        icon_pack: fas      
-      - name: Running
-        description: ''
-        percent: 85
-        icon: person-running
-        icon_pack: fas
-      - name: Film Photography
-        description: ''
-        percent: 60
-        icon: camera-retro
-        icon_pack: fas
+#      - name: Swimming
+#        description: ''
+#        percent: 95
+#        icon: person-swimming
+#        icon_pack: fas      
+#      - name: Running
+#        percent: 85
+#        description: ''
+#        icon: person-running
+#        icon_pack: fas
+#      - name: Film Photography
+#        description: ''
+#        percent: 60
+#        icon: camera-retro
+#        icon_pack: fas
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
