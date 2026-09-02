@@ -29,6 +29,7 @@ LOG_FILE = WATCH_DIR / ".sync.log"
 WIKILINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
 EMBED_RE = re.compile(r"!\[\[([^\]|]+)(?:\|(\d+))?\]\]")
 CALLOUT_RE = re.compile(r"^(>\s*)\[!(\w+)\]([+-]?)\s*(.*)$")
+MATH_RE = re.compile(r"\$\$.*?\$\$|\$[^$\n]*?\$", re.DOTALL)
 
 
 def log(msg):
@@ -87,6 +88,26 @@ def convert_callouts(text):
         else:
             out_lines.append(line)
     return "\n".join(out_lines)
+
+
+def convert_math_escapes(text):
+    """kramdown treats `$$...$$` as a native, opaque math span (verified:
+    its content passes through completely untouched), so escaping it only
+    breaks MathJax subscripts by leaving a literal `\\_` where a real `_`
+    should be. But single-`$...$` inline math is NOT protected — it's parsed
+    as ordinary text, so kramdown's own emphasis engine can pair an
+    underscore from one point in the expression with an unrelated one later
+    in it (e.g. `\\mathbb{E}_{\\tau \\sim \\pi_\\theta}` gets `<em>` wrapped
+    around `{\\tau \\sim \\pi`), producing visibly broken math. So only
+    single-`$` spans need `_`/`|` escaped; `$$` spans must stay untouched."""
+    def repl(m):
+        s = m.group(0)
+        if s.startswith("$$"):
+            return s
+        s = re.sub(r"(?<!\\)\|", r"\\|", s)
+        s = re.sub(r"(?<!\\)_", r"\\_", s)
+        return s
+    return MATH_RE.sub(repl, text)
 
 
 def isolate_display_math(text):
@@ -156,6 +177,7 @@ def build_post(note_path, manifest):
     body = convert_embeds(body, slug)
     body = convert_wikilinks(body)
     body = convert_callouts(body)
+    body = convert_math_escapes(body)
     body = isolate_display_math(body)
 
     frontmatter = (

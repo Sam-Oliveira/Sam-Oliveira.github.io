@@ -61,7 +61,7 @@ Thus, CPR retains the selectivity of neuron-reset methods while avoiding the all
 
 $$S_i^\ell(t) = \mathbb{E}_{x \in \mathcal{B}_t}\left[\left\|\nabla_{W_{i,:}^\ell}\mathcal{L}(x)\right\|\right]$$
 
-$S_i^\ell$ is smoothed with an EMA and divided by the layer's mean score:
+$S\_i^\ell$ is smoothed with an EMA and divided by the layer's mean score:
 
 $$u_i^\ell(t) \leftarrow \beta\, u_i^\ell(t-1) + (1-\beta)\,\tilde{S}_i^\ell(t), \qquad \tilde{S}_i^\ell(t) = \frac{S_i^\ell(t)}{\frac{1}{n_\ell}\sum_k S_k^\ell(t)}$$
 
@@ -76,8 +76,8 @@ This intensity is then scaled by $\rho \in (0,1]$, the maximum fraction any sing
 
 $$r_i^\ell = \rho\,\phi(u_i^\ell) \in [0, \rho]$$
 
-Low-utility units get $r_i^\ell$ near $\rho$ (strong pull); high-utility units get $r_i^\ell$ near 0 (left alone).
-Every $f$ steps, each unit's incoming and outgoing weights are linearly interpolated towards a fresh random draw $\xi_{i,:}^\ell \sim \mathcal{D}_{\text{init}}$ (e.g. Kaiming/Xavier), by that unit's own coefficient:
+Low-utility units get $r\_i^\ell$ near $\rho$ (strong pull); high-utility units get $r\_i^\ell$ near 0 (left alone).
+Every $f$ steps, each unit's incoming and outgoing weights are linearly interpolated towards a fresh random draw $\xi\_{i,:}^\ell \sim \mathcal{D}\_{\text{init}}$ (e.g. Kaiming/Xavier), by that unit's own coefficient:
 
 $$W_{i,:}^\ell \leftarrow (1-r_i^\ell)\,W_{i,:}^\ell + r_i^\ell\,\xi_{i,:}^\ell$$
 
