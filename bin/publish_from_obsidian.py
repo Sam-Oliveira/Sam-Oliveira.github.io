@@ -27,7 +27,7 @@ MANIFEST = WATCH_DIR / ".synced.json"
 LOG_FILE = WATCH_DIR / ".sync.log"
 
 WIKILINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
-EMBED_RE = re.compile(r"!\[\[([^\]]+)\]\]")
+EMBED_RE = re.compile(r"!\[\[([^\]|]+)(?:\|(\d+))?\]\]")
 CALLOUT_RE = re.compile(r"^(>\s*)\[!(\w+)\]([+-]?)\s*(.*)$")
 MATH_RE = re.compile(r"\$\$.*?\$\$|\$[^$\n]*?\$", re.DOTALL)
 
@@ -59,7 +59,7 @@ def convert_wikilinks(text):
 
 def convert_embeds(text, slug):
     def repl(m):
-        fname = m.group(1).strip()
+        fname, width = m.group(1).strip(), m.group(2)
         src = find_in_vault(fname)
         if src is None:
             log(f"  WARNING: embedded file not found in vault: {fname}")
@@ -68,7 +68,12 @@ def convert_embeds(text, slug):
         dest_dir.mkdir(parents=True, exist_ok=True)
         dest = dest_dir / src.name
         dest.write_bytes(src.read_bytes())
-        return f"![]({{{{ site.baseurl }}}}/assets/img/blog/{slug}/{src.name})"
+        img_url = f"{{{{ site.baseurl }}}}/assets/img/blog/{slug}/{src.name}"
+        # Always cap to the post column's width so a large screenshot can't
+        # overflow it; `width` (from Obsidian's `|NNN` resize hint) is an
+        # upper bound on top of that, honoring the size the author picked.
+        width_attr = f' width="{width}"' if width else ""
+        return f'<img src="{img_url}"{width_attr} style="max-width:100%;height:auto;">'
     return EMBED_RE.sub(repl, text)
 
 
@@ -98,6 +103,25 @@ def convert_math_escapes(text):
     return MATH_RE.sub(repl, text)
 
 
+def isolate_display_math(text):
+    """Obsidian renders a `$$...$$` line as display math regardless of what
+    sits next to it, but kramdown folds adjacent non-blank lines into a
+    single paragraph, so the math ends up inline instead of its own block.
+    Insert a blank line around any line that is purely a display-math
+    expression so kramdown isolates it."""
+    lines = text.split("\n")
+    out = []
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        is_display = stripped.startswith("$$") and stripped.endswith("$$") and len(stripped) > 3
+        if is_display and out and out[-1].strip() != "":
+            out.append("")
+        out.append(line)
+        if is_display and i + 1 < len(lines) and lines[i + 1].strip() != "":
+            out.append("")
+    return "\n".join(out)
+
+
 def load_manifest():
     if MANIFEST.exists():
         return json.loads(MANIFEST.read_text())
@@ -112,6 +136,17 @@ def content_hash(text):
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def find_existing_post_date(slug):
+    """Look for an already-committed _posts/ file for this slug and return its
+    date, so a date fixed by hand in the repo is never clobbered by a stale
+    date recorded in the (non-versioned) vault-side manifest."""
+    suffix = f"-{slug}.md"
+    for p in POSTS_DIR.glob("*.md"):
+        if p.name.endswith(suffix) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", p.name[: -len(suffix)]):
+            return p.name[: -len(suffix)]
+    return None
+
+
 def build_post(note_path, manifest):
     raw = note_path.read_text(encoding="utf-8")
     h = content_hash(raw)
@@ -122,12 +157,12 @@ def build_post(note_path, manifest):
         return None  # unchanged, nothing to do
 
     title = note_path.stem
+    slug = entry["slug"] if entry else slugify(title)
+    existing_date = find_existing_post_date(slug)
     if entry:
-        post_date = entry["date"]
-        slug = entry["slug"]
+        post_date = existing_date or entry["date"]
     else:
-        post_date = date.today().isoformat()
-        slug = slugify(title)
+        post_date = existing_date or date.today().isoformat()
 
     body = raw
     # Strip a leading H1 matching the title (Obsidian convention); keep the rest.
@@ -136,6 +171,7 @@ def build_post(note_path, manifest):
     body = convert_wikilinks(body)
     body = convert_callouts(body)
     body = convert_math_escapes(body)
+    body = isolate_display_math(body)
 
     frontmatter = (
         "---\n"

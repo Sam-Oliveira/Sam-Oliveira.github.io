@@ -7,17 +7,23 @@ tags:
 related_posts: false
 ---
 
-*(missing image: Pasted image 20260823102317.png|415)*
+<img src="{{ site.baseurl }}/assets/img/blog/rlc-2026---findings-and-most-interesting-papers/Pasted image 20260823102317.png" width="415" style="max-width:100%;height:auto;">
 
 I had the opportunity to attend RLC this year, in Montreal, and decided to highlight some of the works I found the most interesting (mostly related to Continual Learning), as well as some general trends I see in the field.
-## 1. Continual Learning Workshop
+
+## Contents
+- [Continual Learning Workshop](#continual-learning-workshop)
+- [Main Conference](#main-conference)
+- [Overall trends](#overall-trends)
+
+## 1. Continual Learning Workshop {#continual-learning-workshop}
 
 #### 1.1. [Task Diversity Produces Systematic Transfer but Inhibits Continual Reinforcement Learning (Seth et al.)]([https://openreview.net/forum?id=3WyLUImqng](https://openreview.net/pdf?id=3WyLUImqng))
 
 This paper asks whether the distribution of tasks impacts the performance of a continual RL agent, in particular whether task diversity allows for the agent to keep learning across distribution shifts. "The question is therefore not only whether a final policy generalizes, but whether the learning process itself remains adaptive under task distribution shifts."
 
 **Environment.**
-*(missing image: Screenshot 2026-08-23 at 10.43.52 AM.png|405)*
+<img src="{{ site.baseurl }}/assets/img/blog/rlc-2026---findings-and-most-interesting-papers/Screenshot 2026-08-23 at 10.43.52 AM.png" width="405" style="max-width:100%;height:auto;">
 They also introduce Banyan, a GPU-accelerate domain for continual RL with procedurally-generated tasks/envs. In particular, they design the task space compositionally, so they can better study how the amount and type of task diversity affects CRL, over very large sequences of tasks.
 
 Tasks are based on a mini-grid agent that must combine objects (over multiple steps) in a maze to create a goal object. A task is specified by a *task tree* (specifies which objects must be combined to produce a goal object), and a *layout* (the maze configuration and location of objects). This allows for three axes of task diversity: layouts, task-tree topologies, and task-tree instances (topology is the same but we change the objects). Changing tree topologies in particular changes the way in which sub-goals must be composed (and their order), thus changing a subgoal's policy. Changing object assignment preserves the structure of a solution, while requiring it to adapt to new objects. The agent observes the entire grid and a description of the goal object (it does not know the task tree structure). The agent can move in four directions and "stay", and has three actions 1) to pick up objects; 2) to drop them to combine them with others; 3) to transform a single object. 
@@ -50,21 +56,32 @@ This work proposes an alternative, Calibrated Partial Resets, where neurons are 
 Thus, CPR retains the selectivity of neuron-reset methods while avoiding the all-or-nothing updates that can make full reinitialization brittle in continual RL. In this way, it differs from full reinitialization methods in two ways: (1) it doesn't re-initialize a fixed set of neurons, instead it (partly) reinitializes all neurons, with the strength of such reinitialization being dependent on the utility; (2) this reinitialization is not full towards the initialization value, but instead only partial (an average between the current weight and its initialization).
 
 **Method: Calibrated Partial Resets (CPR).** It works as follows. For neuron $i$ in layer $\ell$, utility is the mean gradient magnitude of its incoming weights:
+
 $$S\_i^\ell(t) = \mathbb{E}\_{x \in \mathcal{B}\_t}\left[\left\|\nabla\_{W\_{i,:}^\ell}\mathcal{L}(x)\right\|\right]$$
+
 $S\_i^\ell$ is smoothed with an EMA and divided by the layer's mean score:
+
 $$u\_i^\ell(t) \leftarrow \beta\, u\_i^\ell(t-1) + (1-\beta)\,\tilde{S}\_i^\ell(t), \qquad \tilde{S}\_i^\ell(t) = \frac{S\_i^\ell(t)}{\frac{1}{n\_\ell}\sum\_k S\_k^\ell(t)}$$
+
 Then, a monotonically decreasing sigmoid-based function turns utility into a $[0,1]$ intensity:
+
 $$\phi(u\_i^\ell) = \min\!\big(2\sigma[-\kappa(u\_i^\ell - 1)],\, 1\big)$$
+
 - units at or above the layer-average utility ($u \geq 1$) get $\phi \approx 0$
 - units well below average get $\phi \to 1$
 - $\kappa$ controls how sharp the transition is (fixed at $\kappa = 16$ in the paper)
 This intensity is then scaled by $\rho \in (0,1]$, the maximum fraction any single neuron is allowed to be pulled toward reinitialization, to get the actual per-neuron reset coefficient:
+
 $$r\_i^\ell = \rho\,\phi(u\_i^\ell) \in [0, \rho]$$
+
 Low-utility units get $r\_i^\ell$ near $\rho$ (strong pull); high-utility units get $r\_i^\ell$ near 0 (left alone).
 Every $f$ steps, each unit's incoming and outgoing weights are linearly interpolated towards a fresh random draw $\xi\_{i,:}^\ell \sim \mathcal{D}\_{\text{init}}$ (e.g. Kaiming/Xavier), by that unit's own coefficient:
+
 $$W\_{i,:}^\ell \leftarrow (1-r\_i^\ell)\,W\_{i,:}^\ell + r\_i^\ell\,\xi\_{i,:}^\ell$$
+
 $$W\_{:,i}^{\ell+1} \leftarrow (1-r\_i^\ell)\,W\_{:,i}^{\ell+1}$$
-*(missing image: Screenshot 2026-08-23 at 7.16.59 PM.png|592)*
+
+<img src="{{ site.baseurl }}/assets/img/blog/rlc-2026---findings-and-most-interesting-papers/Screenshot 2026-08-23 at 7.16.59 PM.png" width="592" style="max-width:100%;height:auto;">
 
 **Results.** The results are quite impressive: CPR is the only method to avoid policy decay in slippery Ant over 400M training steps. Other reinitialization methods either seem to eventually collapse, or are stable but converge to a suboptimal policy. 
 
@@ -79,7 +96,7 @@ This paper studies how a MLP connectivity affects its speed of learning in stati
 - Starting from a block network that has converged to the solution, and adding weights set to 0 to make the network dense and training that dense network leads to worse performance than the original block network. The authors posit this is due to worse credit assignment through the network, as part of its updates are performed on weights that do not relate to the task.
 It is a nice read, and it motivates some of the work I am interested in regarding learning the connectivity of neural networks.
 
-### 2. Main Conference
+### 2. Main Conference {#main-conference}
 #### 2.1. [The Cell Must Go On: Agar.io for Continual RL](https://arxiv.org/pdf/2505.18347)
 
 This paper introduces AgarCL, a continual RL environment based on the game of Agar.io. Most interestingly, the environment is non-episodic and introduces gradual non-stationarity, instead of the usual sharp non-stationarity in continual learning benchmarks. In particular, the game is never-ending, and the environment dynamics (both the observations and the consequences of actions) change as the agent's mass changes, and thus the agent needs to constantly adapt. 
@@ -97,7 +114,7 @@ This work studies the impact of (1) the Adam optimizer, and (2) objectives with 
 In particular, they show DQN (without eligibility traces) without replay buffers can perform well, if we 1) let it have the normalization techniques of stream-x and stuff like LayerNorm; and 2) we tune the Adam hyperparameters. Thus, even without the fancy optimizer of stream-x (and without eligibility traces), DQN without replay buffers can work just as well, although this depends quite strongly on the environment.
 
 They then propose their own version of $Q(\lambda)$, called Adaptive $Q(\lambda)$, that uses eligibility traces that are normalized by an EMA of the squared gradients of the state-action value function $Q$ (while Adam keeps an EMA of the gradient and normalizes it by an EMA of the squared gradients, $AQ(\lambda)$ instead keeps an accumulating eligibility trace but normalizes it by an EMA of the squared value function gradients). Their method also requires clamping the TD error.
-	![]({{ site.baseurl }}/assets/img/blog/rlc-2026---findings-and-most-interesting-papers/Screenshot 2026-09-02 at 10.48.30 AM.png)
+	<img src="{{ site.baseurl }}/assets/img/blog/rlc-2026---findings-and-most-interesting-papers/Screenshot 2026-09-02 at 10.48.30 AM.png" style="max-width:100%;height:auto;">
 It is not clear how the update of $AQ(\lambda)$ compares with the ObGD optimizer used in the stream-x family, and whether ideas from both could be combined. They both clip the TD error. However, while ObGD only adjusts the step size (keeping the eligibility trace direction fixed), $AQ(\lambda)$ inherently changes the eligibility trace direction by scaling components according to the EMA of their squared value. It is unclear to me whether this idea of parameter-wise scaling makes as much sense in an eligibility trace set-up, but it is interesting nonetheless.
 
 #### 2.3. [WiSCA: Winning Subnetworks with Cross-Task Attention](https://openreview.net/pdf?id=v7XWnkIWwq)
@@ -112,7 +129,7 @@ This is a really cool idea, particularly because it scales better than previous 
 - [A Survey of State Representation Learning for Deep Reinforcement Learning](https://arxiv.org/pdf/2506.17518)
 - [Cohering Reinforcement Learning](https://rlj.cs.umass.edu/2026/papers/Paper138.pdf) (by far the "weirdest" and most thought-provoking paper I saw at RLC)
 
-## Overall trends (particularly regarding Continual Learning)
+## Overall trends (particularly regarding Continual Learning) {#overall-trends}
 
 ### A field reluctant to face what continual learning is supposed to be
 
