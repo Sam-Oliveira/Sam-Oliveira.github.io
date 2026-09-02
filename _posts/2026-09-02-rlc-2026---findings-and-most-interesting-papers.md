@@ -23,7 +23,9 @@ I had the opportunity to attend RLC this year, in Montreal, and decided to highl
 This paper asks whether the distribution of tasks impacts the performance of a continual RL agent, in particular whether task diversity allows for the agent to keep learning across distribution shifts. "The question is therefore not only whether a final policy generalizes, but whether the learning process itself remains adaptive under task distribution shifts."
 
 **Environment.**
+
 <img src="{{ site.baseurl }}/assets/img/blog/rlc-2026---findings-and-most-interesting-papers/Screenshot 2026-08-23 at 10.43.52 AM.png" width="405" style="max-width:100%;height:auto;">
+
 They also introduce Banyan, a GPU-accelerate domain for continual RL with procedurally-generated tasks/envs. In particular, they design the task space compositionally, so they can better study how the amount and type of task diversity affects CRL, over very large sequences of tasks.
 
 Tasks are based on a mini-grid agent that must combine objects (over multiple steps) in a maze to create a goal object. A task is specified by a *task tree* (specifies which objects must be combined to produce a goal object), and a *layout* (the maze configuration and location of objects). This allows for three axes of task diversity: layouts, task-tree topologies, and task-tree instances (topology is the same but we change the objects). Changing tree topologies in particular changes the way in which sub-goals must be composed (and their order), thus changing a subgoal's policy. Changing object assignment preserves the structure of a solution, while requiring it to adapt to new objects. The agent observes the entire grid and a description of the goal object (it does not know the task tree structure). The agent can move in four directions and "stay", and has three actions 1) to pick up objects; 2) to drop them to combine them with others; 3) to transform a single object. 
@@ -96,7 +98,7 @@ This paper studies how a MLP connectivity affects its speed of learning in stati
 - Starting from a block network that has converged to the solution, and adding weights set to 0 to make the network dense and training that dense network leads to worse performance than the original block network. The authors posit this is due to worse credit assignment through the network, as part of its updates are performed on weights that do not relate to the task.
 It is a nice read, and it motivates some of the work I am interested in regarding learning the connectivity of neural networks.
 
-### 2. Main Conference {#main-conference}
+## 2. Main Conference {#main-conference}
 #### 2.1. [The Cell Must Go On: Agar.io for Continual RL](https://arxiv.org/pdf/2505.18347)
 
 This paper introduces AgarCL, a continual RL environment based on the game of Agar.io. Most interestingly, the environment is non-episodic and introduces gradual non-stationarity, instead of the usual sharp non-stationarity in continual learning benchmarks. In particular, the game is never-ending, and the environment dynamics (both the observations and the consequences of actions) change as the agent's mass changes, and thus the agent needs to constantly adapt. 
