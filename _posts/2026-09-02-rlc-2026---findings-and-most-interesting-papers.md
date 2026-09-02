@@ -20,13 +20,13 @@ I had the opportunity to attend RLC this year, in Montreal, and decided to highl
 
 #### 1.1. [Task Diversity Produces Systematic Transfer but Inhibits Continual Reinforcement Learning (Seth et al.)]([https://openreview.net/forum?id=3WyLUImqng](https://openreview.net/pdf?id=3WyLUImqng))
 
-This paper asks whether the distribution of tasks impacts the performance of a continual RL agent, in particular whether task diversity allows for the agent to keep learning across distribution shifts. "The question is therefore not only whether a final policy generalizes, but whether the learning process itself remains adaptive under task distribution shifts."
+This paper asks whether the distribution of tasks impacts the performance of a continual RL agent, in particular whether task diversity allows for the agent to keep learning across distribution shifts. 
 
 **Environment.**
 
 <img src="{{ site.baseurl }}/assets/img/blog/rlc-2026---findings-and-most-interesting-papers/Screenshot 2026-08-23 at 10.43.52 AM.png" width="405" style="max-width:100%;height:auto;">
 
-They also introduce Banyan, a GPU-accelerate domain for continual RL with procedurally-generated tasks/envs. In particular, they design the task space compositionally, so they can better study how the amount and type of task diversity affects CRL, over very large sequences of tasks.
+To help study its research question, the paper introduces Banyan, a GPU-accelerate domain for continual RL with procedurally-generated tasks/envs. The task space is compositional, so the paper can better study how the amount and type of task diversity affects CRL, over very large sequences of tasks.
 
 Tasks are based on a mini-grid agent that must combine objects (over multiple steps) in a maze to create a goal object. A task is specified by a *task tree* (specifies which objects must be combined to produce a goal object), and a *layout* (the maze configuration and location of objects). This allows for three axes of task diversity: layouts, task-tree topologies, and task-tree instances (topology is the same but we change the objects). Changing tree topologies in particular changes the way in which sub-goals must be composed (and their order), thus changing a subgoal's policy. Changing object assignment preserves the structure of a solution, while requiring it to adapt to new objects. The agent observes the entire grid and a description of the goal object (it does not know the task tree structure). The agent can move in four directions and "stay", and has three actions 1) to pick up objects; 2) to drop them to combine them with others; 3) to transform a single object. 
 
