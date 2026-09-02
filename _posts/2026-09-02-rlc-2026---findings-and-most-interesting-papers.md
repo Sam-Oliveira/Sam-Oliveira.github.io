@@ -59,29 +59,29 @@ Thus, CPR retains the selectivity of neuron-reset methods while avoiding the all
 
 **Method: Calibrated Partial Resets (CPR).** It works as follows. For neuron $i$ in layer $\ell$, utility is the mean gradient magnitude of its incoming weights:
 
-$$S\_i^\ell(t) = \mathbb{E}\_{x \in \mathcal{B}\_t}\left[\left\|\nabla\_{W\_{i,:}^\ell}\mathcal{L}(x)\right\|\right]$$
+$$S_i^\ell(t) = \mathbb{E}_{x \in \mathcal{B}_t}\left[\left\|\nabla_{W_{i,:}^\ell}\mathcal{L}(x)\right\|\right]$$
 
-$S\_i^\ell$ is smoothed with an EMA and divided by the layer's mean score:
+$S_i^\ell$ is smoothed with an EMA and divided by the layer's mean score:
 
-$$u\_i^\ell(t) \leftarrow \beta\, u\_i^\ell(t-1) + (1-\beta)\,\tilde{S}\_i^\ell(t), \qquad \tilde{S}\_i^\ell(t) = \frac{S\_i^\ell(t)}{\frac{1}{n\_\ell}\sum\_k S\_k^\ell(t)}$$
+$$u_i^\ell(t) \leftarrow \beta\, u_i^\ell(t-1) + (1-\beta)\,\tilde{S}_i^\ell(t), \qquad \tilde{S}_i^\ell(t) = \frac{S_i^\ell(t)}{\frac{1}{n_\ell}\sum_k S_k^\ell(t)}$$
 
 Then, a monotonically decreasing sigmoid-based function turns utility into a $[0,1]$ intensity:
 
-$$\phi(u\_i^\ell) = \min\!\big(2\sigma[-\kappa(u\_i^\ell - 1)],\, 1\big)$$
+$$\phi(u_i^\ell) = \min\!\big(2\sigma[-\kappa(u_i^\ell - 1)],\, 1\big)$$
 
 - units at or above the layer-average utility ($u \geq 1$) get $\phi \approx 0$
 - units well below average get $\phi \to 1$
 - $\kappa$ controls how sharp the transition is (fixed at $\kappa = 16$ in the paper)
 This intensity is then scaled by $\rho \in (0,1]$, the maximum fraction any single neuron is allowed to be pulled toward reinitialization, to get the actual per-neuron reset coefficient:
 
-$$r\_i^\ell = \rho\,\phi(u\_i^\ell) \in [0, \rho]$$
+$$r_i^\ell = \rho\,\phi(u_i^\ell) \in [0, \rho]$$
 
-Low-utility units get $r\_i^\ell$ near $\rho$ (strong pull); high-utility units get $r\_i^\ell$ near 0 (left alone).
-Every $f$ steps, each unit's incoming and outgoing weights are linearly interpolated towards a fresh random draw $\xi\_{i,:}^\ell \sim \mathcal{D}\_{\text{init}}$ (e.g. Kaiming/Xavier), by that unit's own coefficient:
+Low-utility units get $r_i^\ell$ near $\rho$ (strong pull); high-utility units get $r_i^\ell$ near 0 (left alone).
+Every $f$ steps, each unit's incoming and outgoing weights are linearly interpolated towards a fresh random draw $\xi_{i,:}^\ell \sim \mathcal{D}_{\text{init}}$ (e.g. Kaiming/Xavier), by that unit's own coefficient:
 
-$$W\_{i,:}^\ell \leftarrow (1-r\_i^\ell)\,W\_{i,:}^\ell + r\_i^\ell\,\xi\_{i,:}^\ell$$
+$$W_{i,:}^\ell \leftarrow (1-r_i^\ell)\,W_{i,:}^\ell + r_i^\ell\,\xi_{i,:}^\ell$$
 
-$$W\_{:,i}^{\ell+1} \leftarrow (1-r\_i^\ell)\,W\_{:,i}^{\ell+1}$$
+$$W_{:,i}^{\ell+1} \leftarrow (1-r_i^\ell)\,W_{:,i}^{\ell+1}$$
 
 <img src="{{ site.baseurl }}/assets/img/blog/rlc-2026---findings-and-most-interesting-papers/Screenshot 2026-08-23 at 7.16.59 PM.png" width="592" style="max-width:100%;height:auto;">
 

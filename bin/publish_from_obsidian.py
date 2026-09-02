@@ -29,7 +29,6 @@ LOG_FILE = WATCH_DIR / ".sync.log"
 WIKILINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
 EMBED_RE = re.compile(r"!\[\[([^\]|]+)(?:\|(\d+))?\]\]")
 CALLOUT_RE = re.compile(r"^(>\s*)\[!(\w+)\]([+-]?)\s*(.*)$")
-MATH_RE = re.compile(r"\$\$.*?\$\$|\$[^$\n]*?\$", re.DOTALL)
 
 
 def log(msg):
@@ -88,19 +87,6 @@ def convert_callouts(text):
         else:
             out_lines.append(line)
     return "\n".join(out_lines)
-
-
-def convert_math_escapes(text):
-    """Escape `_` and `|` inside $...$/$$...$$ math so kramdown's GFM parser
-    doesn't mistake LaTeX subscripts for italics or table syntax (both
-    characters are otherwise indistinguishable from Markdown emphasis and
-    pipe-table delimiters to kramdown, which runs before MathJax)."""
-    def repl(m):
-        s = m.group(0)
-        s = re.sub(r"(?<!\\)\|", r"\\|", s)
-        s = re.sub(r"(?<!\\)_", r"\\_", s)
-        return s
-    return MATH_RE.sub(repl, text)
 
 
 def isolate_display_math(text):
@@ -170,7 +156,6 @@ def build_post(note_path, manifest):
     body = convert_embeds(body, slug)
     body = convert_wikilinks(body)
     body = convert_callouts(body)
-    body = convert_math_escapes(body)
     body = isolate_display_math(body)
 
     frontmatter = (
